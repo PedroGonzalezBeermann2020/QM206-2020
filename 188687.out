@@ -1,0 +1,2771 @@
+----- GAMESS execution script 'rungms' -----
+This job is running on host chemcompute-node-0.novalocal
+under operating system Linux at Thu Sep 10 20:52:04 UTC 2020
+SLURM has assigned the following compute nodes to this run:
+chemcompute-node-0
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda1       20960236 15104764   5855472  73% /
+GAMESS temporary binary files will be written to /scratch/167764
+GAMESS supplementary output files will be written to /data/slurm/188687
+Copying input file 188687.inp to your run's scratch directory...
+The generated host list is
+chemcompute-node-0.novalocal
+
+ Distributed Data Interface kickoff program.
+ Initiating 1 compute processes on 1 nodes to run the following command:
+ /data/gamess-2019R1-ddi/gamess.00.x 188687 
+
+          ******************************************************
+          *         GAMESS VERSION = 30 JUN 2019 (R1)          *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          **************** 64 BIT LINUX VERSION ****************
+
+  SINCE 1993, STUDENTS AND POSTDOCS WORKING AT IOWA STATE UNIVERSITY
+  AND ALSO IN THEIR VARIOUS JOBS AFTER LEAVING ISU HAVE MADE IMPORTANT
+  CONTRIBUTIONS TO THE CODE:
+     IVANA ADAMOVIC, CHRISTINE AIKENS, YURI ALEXEEV, POOJA ARORA,
+     ANDREY ASADCHEV, ROB BELL, PRADIPTA BANDYOPADHYAY, JONATHAN BENTZ,
+     COLLEEN BERTONI, BRETT BODE, KURT BRORSEN, CALEB CARLIN, GALINA CHABAN,
+     WEI CHEN, CHEOL HO CHOI, PAUL DAY, ALBERT DEFUSCO, NUWAN DESILVA,
+     TIM DUDLEY, DMITRI FEDOROV, ALEX FINDLATER, GRAHAM FLETCHER, 
+     MARK FREITAG, KURT GLAESEMANN, ANASTASIA GUNINA,
+     DAN KEMP, GRANT MERRILL, NORIYUKI MINEZAWA, JONATHAN MULLIN,
+     TAKESHI NAGATA, SEAN NEDD, HEATHER NETZLOFF, BOSILJKA NJEGIC, RYAN OLSON,
+     MIKE PAK, BUU PHAM,
+     SPENCER PRUITT, LUKE ROSKOP, JIM SHOEMAKER, LYUDMILA SLIPCHENKO,
+     TONY SMITH, SAROM SOK LEANG, JIE SONG, TETSUYA TAKETSUGU, SIMON WEBB,
+     PENG XU, SOOHAENG YOO, FEDERICO ZAHARIEV
+
+  ADDITIONAL CODE HAS BEEN PROVIDED BY COLLABORATORS IN OTHER GROUPS:
+     IOWA STATE UNIVERSITY:
+          JOE IVANIC, AARON WEST, LAIMUTIS BYTAUTAS, KLAUS RUEDENBERG
+     UNIVERSITY OF TOKYO: KIMIHIKO HIRAO, TAKAHITO NAKAJIMA,
+          TAKAO TSUNEDA, MUNEAKI KAMIYA, SUSUMU YANAGISAWA,
+          KIYOSHI YAGI, MAHITO CHIBA, SEIKEN TOKURA, NAOAKI KAWAKAMI
+     UNIVERSITY OF AARHUS: FRANK JENSEN
+     UNIVERSITY OF IOWA: VISVALDAS KAIRYS, HUI LI
+     NATIONAL INST. OF STANDARDS AND TECHNOLOGY: WALT STEVENS, DAVID GARMER
+     UNIVERSITY OF PISA: BENEDETTA MENNUCCI, JACOPO TOMASI
+     UNIVERSITY OF MEMPHIS: HENRY KURTZ, PRAKASHAN KORAMBATH
+     UNIVERSITY OF ALBERTA: TOBY ZENG, MARIUSZ KLOBUKOWSKI
+     UNIVERSITY OF NEW ENGLAND: MARK SPACKMAN
+     MIE UNIVERSITY: HIROAKI UMEDA
+     NAT. INST. OF ADVANCED INDUSTRIAL SCIENCE AND TECHNOLOGY: KAZUO KITAURA
+     MICHIGAN STATE UNIVERSITY:
+          KAROL KOWALSKI, MARTA WLOCH, JEFFREY GOUR, JESSE LUTZ,
+          WEI LI, JUN SHEN, J. EMILIANO DEUSTUA, PIOTR PIECUCH
+     UNIVERSITY OF MINNESOTA:
+          YINAN SHU
+     UNIVERSITY OF SILESIA: MONIKA MUSIAL, STANISLAW KUCHARSKI
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX:
+          OLIVIER QUINET, BENOIT CHAMPAGNE
+     UNIVERSITY OF CALIFORNIA - SANTA BARBARA: BERNARD KIRTMAN
+     INSTITUTE FOR MOLECULAR SCIENCE:
+          KAZUYA ISHIMURA, MICHIO KATOUDA, AND SHIGERU NAGASE
+     UNIVERSITY OF NOTRE DAME: ANNA POMOGAEVA, DAN CHIPMAN
+     KYUSHU UNIVERSITY:
+          HARUYUKI NAKANO,
+          FENG LONG GU, JACEK KORCHOWIEC, MARCIN MAKOWSKI, AND YURIKO AOKI,
+          HIROTOSHI MORI AND EISAKU MIYOSHI
+     PENNSYLVANIA STATE UNIVERSITY:
+          TZVETELIN IORDANOV, CHET SWALINA, JONATHAN SKONE,
+          SHARON HAMMES-SCHIFFER
+     WASEDA UNIVERSITY:
+          MASATO KOBAYASHI, TOMOKO AKAMA, TSUGUKI TOUMA,
+          TAKESHI YOSHIKAWA, YASUHIRO IKABATA, JUNJI SEINO,
+          YUYA NAKAJIMA, HIROMI NAKAI
+     NANJING UNIVERSITY: SHUHUA LI
+     UNIVERSITY OF NEBRASKA:
+          PEIFENG SU, DEJUN SI, NANDUN THELLAMUREGE, YALI WANG, HUI LI
+     UNIVERSITY OF ZURICH: ROBERTO PEVERATI, KIM BALDRIDGE
+     N. COPERNICUS UNIVERSITY AND JACKSON STATE UNIVERSITY:
+          MARIA BARYSZ
+     UNIVERSITY OF COPENHAGEN: Jimmy Kromann, CASPER STEINMANN
+     TOKYO INSTITUTE OF TECHNOLOGY: HIROYA NAKATA
+     NAGOYA UNIVERSITY: YOSHIO NISHIMOTO, STEPHAN IRLE
+     MOSCOW STATE UNIVERSITY: VLADIMIR MIRONOV
+     A.N.NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS OF RUSSIAN ACADEMY OF SCIENCES:
+          IGOR S. GERASIMOV
+
+ EXECUTION OF GAMESS BEGUN Thu Sep 10 20:52:04 2020
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>!   File created by the GAMESS Input Deck Generator Plugin for Avogadro         
+ INPUT CARD> $BASIS GBASIS=PM3 $END                                                         
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=SURFACE COORD=ZMT NZVAR=3 $END                       
+ INPUT CARD> $CONTRL EXETYP=RUN $END                                                        
+ INPUT CARD> $STATPT OPTTOL=0.0005  NSTEP=50 NOREG=5 $END                                   
+ INPUT CARD> $surf ndisp1=20 disp1=0.1 ivec1(1)=3,1 IGRP1(1)=1,2 orig1=-0.4 $end            
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Title                                                                           
+ INPUT CARD>C1                                                                              
+ INPUT CARD>O                                                                               
+ INPUT CARD>H       1        0.99025                                                        
+ INPUT CARD>H       1        0.99025     2      104.51001                                   
+ INPUT CARD> $END                                                                           
+    1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=PM3          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ Title                                                                           
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ YOUR FULLY SUBSTITUTED Z-MATRIX IS
+ O   
+ H      1   0.9902500
+ H      1   0.9902500  2  104.5100
+
+ THE MOMENTS OF INERTIA ARE (AMU-ANGSTROM**2)
+ IXX=     0.658   IYY=     1.236   IZZ=     1.894
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.0000000000       -0.1282000444        0.0000000000
+ H           1.0     1.4797183866        1.0173136070        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.9902500 *
+   2 H       0.9902500 *  0.0000000    1.5660666 *
+   3 H       0.9902500 *  1.5660666 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    3
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =    6
+ NUMBER OF ELECTRONS                          =    8
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    4
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    4
+ TOTAL NUMBER OF ATOMS                        =    3
+ THE NUCLEAR REPULSION ENERGY IS        8.8881025758
+
+ THE PARAMETERS USED IN THIS CALCULATION ARE DESCRIBED IN:
+
+  H: (PM3): J. J. P. STEWART, J. COMP. CHEM.     10, 209 (1989).                
+  O: (PM3): J. J. P. STEWART, J. COMP. CHEM.     10, 209 (1989).                
+
+ THERE ARE    1 HEAVY AND    2 LIGHT ATOMS,
+ YIELDING A TOTAL OF        21 MOPAC 2E- INTEGRALS.
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=SURFACE      EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       3     COORD =ZMT     
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1     6     2     1
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTOFF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+   --- ENCODED Z MATRIX ---
+ COORD  TYPE   I   J   K   L   M   N
+    1      1    2   1
+    2      1    3   1
+    3      2    3   1   2
+
+ THE DETERMINANT OF THE G MATRIX IS 10**(    -1)
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                 - - ATOMS - -         COORDINATE      COORDINATE
+ NO.   TYPE    I  J  K  L  M  N        (BOHR,RAD)       (ANG,DEG)
+ ----------------------------------------------------------------
+   1 STRETCH   2  1                     1.8713012       0.9902500
+   2 STRETCH   3  1                     1.8713012       0.9902500
+   3 BEND      3  1  2                  1.8240438     104.5100100
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =    6
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.04 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    66.67%
+
+     ---------------------------
+     POTENTIAL SURFACE MAP INPUT
+     ---------------------------
+ JOB 1 IS RUNTYP=ENERGY   SCFTYP=RHF       CITYP=NONE    
+          MPLEVL=       0  CCTYP=NONE     DFTTYP=NONE    
+ COORD 1 LYING ALONG ATOM PAIR    3    1
+ HAS ORIGIN=-0.400, DISPLACEMENT= 0.100  AND 20 STEPS.
+ GROUP 1 CONTAINS    2 ATOMS:
+     1    2
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0    -0.5977150766        0.3345169064        0.0000000000
+ H           1.0     0.8820033099        1.4800305578        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.5902500 *
+   2 H       0.9902500 *  0.0000000    1.2735304 *
+   3 H       0.5902500 *  1.2735304 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    66.67%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    66.67%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     4 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    71.43%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         6.3757144847
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.6133163236   -11.6133163236   0.251445752   0.000000000
+   2  1  0      -11.7120202040    -0.0987038804   0.097009864   0.000000000
+   3  2  0      -11.7201641209    -0.0081439169   0.039576546   0.000000000
+   4  3  0      -11.7213853027    -0.0012211817   0.017214192   0.000000000
+   5  0  0      -11.7216340018    -0.0002486991   0.014631219   0.000000000
+   6  1  0      -11.7217061761    -0.0000721743   0.000224692   0.000000000
+   7  2  0      -11.7217062562    -0.0000000801   0.000109059   0.000000000
+   8  3  0      -11.7217062754    -0.0000000192   0.000053571   0.000000000
+   9  4  0      -11.7217062801    -0.0000000047   0.000026500   0.000000000
+  10  5  0      -11.7217062812    -0.0000000012   0.000013171   0.000000000
+  11  6  0      -11.7217062815    -0.0000000003   0.000006570   0.000000000
+  12  7  0      -11.7217062816    -0.0000000001   0.000003288   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7217062816 AFTER  12 ITERATIONS
+
+ HEAT OF FORMATION IS        83.55349 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.5195    -0.6536    -0.5294    -0.4564     0.1548
+                     A          A          A          A          A   
+    1  O  1  S    0.836248   0.075905  -0.340696  -0.000000  -0.247122
+    2  O  1  X   -0.049131   0.766599  -0.076010   0.000000  -0.449838
+    3  O  1  Y    0.110438   0.036199   0.862771   0.000000  -0.392495
+    4  O  1  Z    0.000000   0.000000  -0.000000   1.000000   0.000000
+    5  H  2  S    0.267975   0.520895   0.272750  -0.000000   0.761493
+    6  H  3  S    0.462892  -0.365954   0.243682   0.000000   0.051502
+
+                      6
+                    0.2655
+                     A   
+    1  O  1  S   -0.343198
+    2  O  1  X    0.449200
+    3  O  1  Y   -0.296759
+    4  O  1  Z   -0.000000
+    5  H  2  S   -0.050917
+    6  H  3  S    0.767968
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.06 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    78.57%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3498          6.3498
+           2         H              0.1649          0.8351
+           3         H              0.1849          0.8151
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.027255    1.627011   -0.000000    1.627239
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.1 SECONDS, CPU UTILIZATION IS    78.57%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=-0.400 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.721706
+ O     -0.31630   0.17702   0.00000
+ H      0.46674   0.78320   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0    -0.4482863075        0.2188376687        0.0000000000
+ H           1.0     1.0314320791        1.3643513201        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.6902500 *
+   2 H       0.9902500 *  0.0000000    1.3414734 *
+   3 H       0.6902500 *  1.3414734 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    73.33%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.1 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    73.33%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         6.0534802268
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.8360640877   -11.8360640877   0.037765692   0.000000000
+   2  1  0      -11.8388360491    -0.0027719615   0.011863830   0.000000000
+   3  2  0      -11.8391040663    -0.0002680172   0.004627297   0.000000000
+   4  3  0      -11.8391445912    -0.0000405249   0.002241117   0.000000000
+   5  0  0      -11.8391524668    -0.0000078756   0.002108114   0.000000000
+   6  1  0      -11.8391546371    -0.0000021703   0.000046524   0.000000000
+   7  2  0      -11.8391546387    -0.0000000015   0.000018812   0.000000000
+   8  3  0      -11.8391546390    -0.0000000003   0.000007719   0.000000000
+   9  4  0      -11.8391546390    -0.0000000001   0.000003202   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.8391546390 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS         9.85137 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.4608    -0.6544    -0.5350    -0.4558     0.1546
+                     A          A          A          A          A   
+    1  O  1  S    0.848167   0.077659  -0.344804  -0.000000  -0.268121
+    2  O  1  X   -0.041999   0.768744  -0.026328   0.000000  -0.406628
+    3  O  1  Y    0.113272  -0.001859   0.850976   0.000000  -0.422109
+    4  O  1  Z   -0.000000  -0.000000  -0.000000   1.000000  -0.000000
+    5  H  2  S    0.281978   0.493407   0.303514   0.000000   0.757603
+    6  H  3  S    0.431864  -0.399435   0.253251   0.000000   0.103086
+
+                      6
+                    0.2461
+                     A   
+    1  O  1  S   -0.289487
+    2  O  1  X    0.491151
+    3  O  1  Y   -0.291256
+    4  O  1  Z   -0.000000
+    5  H  2  S   -0.104667
+    6  H  3  S    0.761041
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.04 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    83.33%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3495          6.3495
+           2         H              0.1698          0.8302
+           3         H              0.1796          0.8204
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.030118    1.679404    0.000000    1.679674
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    78.95%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=-0.300 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.839155
+ O     -0.23722   0.11580   0.00000
+ H      0.54581   0.72198   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0    -0.2988575383        0.1031584310        0.0000000000
+ H           1.0     1.1808608483        1.2486720824        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.7902500 *
+   2 H       0.9902500 *  0.0000000    1.4132311 *
+   3 H       0.7902500 *  1.4132311 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    78.95%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    78.95%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         5.7790273839
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.9030636985   -11.9030636985   0.035467620   0.000000000
+   2  1  0      -11.9053355711    -0.0022718726   0.010799393   0.000000000
+   3  2  0      -11.9055395472    -0.0002039761   0.004087489   0.000000000
+   4  3  0      -11.9055679462    -0.0000283990   0.001952932   0.000000000
+   5  0  0      -11.9055731766    -0.0000052304   0.001785635   0.000000000
+   6  1  0      -11.9055745545    -0.0000013779   0.000032849   0.000000000
+   7  2  0      -11.9055745553    -0.0000000008   0.000013321   0.000000000
+   8  3  0      -11.9055745555    -0.0000000001   0.000005451   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.9055745555 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -31.82898 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.4087    -0.6507    -0.5382    -0.4549     0.1536
+                     A          A          A          A          A   
+    1  O  1  S    0.860826   0.064713  -0.344548   0.000000  -0.291164
+    2  O  1  X   -0.030431   0.769241   0.003650   0.000000  -0.342334
+    3  O  1  Y    0.112749  -0.021436   0.839812  -0.000000  -0.461429
+    4  O  1  Z   -0.000000  -0.000000   0.000000   1.000000   0.000000
+    5  H  2  S    0.296080   0.470954   0.322512   0.000000   0.742958
+    6  H  3  S    0.397086  -0.426408   0.268280  -0.000000   0.182011
+
+                      6
+                    0.2231
+                     A   
+    1  O  1  S   -0.226497
+    2  O  1  X    0.538644
+    3  O  1  Y   -0.261967
+    4  O  1  Z    0.000000
+    5  H  2  S   -0.185845
+    6  H  3  S    0.745249
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.04 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    86.36%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3501          6.3501
+           2         H              0.1731          0.8269
+           3         H              0.1770          0.8230
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.026698    1.719805   -0.000000    1.720012
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    86.36%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=-0.200 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.905575
+ O     -0.15815   0.05459   0.00000
+ H      0.62488   0.66077   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0    -0.1494287692       -0.0125208067        0.0000000000
+ H           1.0     1.3302896174        1.1329928447        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.8902500 *
+   2 H       0.9902500 *  0.0000000    1.4882518 *
+   3 H       0.8902500 *  1.4882518 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    86.96%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.2 SECONDS, CPU UTILIZATION IS    86.96%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         5.5449044299
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.9323625817   -11.9323625817   0.033000274   0.000000000
+   2  1  0      -11.9342068251    -0.0018442434   0.009852858   0.000000000
+   3  2  0      -11.9343657012    -0.0001588762   0.003663134   0.000000000
+   4  3  0      -11.9343867843    -0.0000210831   0.001742870   0.000000000
+   5  0  0      -11.9343905780    -0.0000037937   0.001581005   0.000000000
+   6  1  0      -11.9343915712    -0.0000009932   0.000024758   0.000000000
+   7  2  0      -11.9343915718    -0.0000000006   0.000010084   0.000000000
+   8  3  0      -11.9343915719    -0.0000000001   0.000004133   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.9343915719 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -49.91246 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.3642    -0.6428    -0.5392    -0.4537     0.1499
+                     A          A          A          A          A   
+    1  O  1  S    0.873228   0.038304  -0.341070   0.000000  -0.318035
+    2  O  1  X   -0.015875   0.769818   0.013142   0.000000  -0.221096
+    3  O  1  Y    0.109574  -0.021609   0.830376  -0.000000  -0.515998
+    4  O  1  Z    0.000000  -0.000000   0.000000   1.000000   0.000000
+    5  H  2  S    0.309471   0.455876   0.330121  -0.000000   0.691799
+    6  H  3  S    0.359781  -0.444548   0.291539  -0.000000   0.324238
+
+                      6
+                    0.1996
+                     A   
+    1  O  1  S   -0.136129
+    2  O  1  X    0.598391
+    3  O  1  Y   -0.178183
+    4  O  1  Z   -0.000000
+    5  H  2  S   -0.329906
+    6  H  3  S    0.694845
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    88.46%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3507          6.3507
+           2         H              0.1748          0.8252
+           3         H              0.1759          0.8241
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.016636    1.751911   -0.000000    1.751990
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    88.46%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=-0.100 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.934392
+ O     -0.07907  -0.00663   0.00000
+ H      0.70396   0.59955   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.0000000000       -0.1282000444        0.0000000000
+ H           1.0     1.4797183866        1.0173136070        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  0.9902500 *
+   2 H       0.9902500 *  0.0000000    1.5660666 *
+   3 H       0.9902500 *  1.5660666 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    88.46%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.2 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    85.19%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         5.3438800280
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.9354432781   -11.9354432781   0.030467036   0.000000000
+   2  1  0      -11.9369293206    -0.0014860425   0.008987247   0.000000000
+   3  2  0      -11.9370547567    -0.0001254361   0.003309773   0.000000000
+   4  3  0      -11.9370710805    -0.0000163239   0.001581421   0.000000000
+   5  0  0      -11.9370740345    -0.0000029540   0.001451478   0.000000000
+   6  1  0      -11.9370748315    -0.0000007969   0.000020378   0.000000000
+   7  2  0      -11.9370748320    -0.0000000005   0.000008383   0.000000000
+   8  3  0      -11.9370748321    -0.0000000001   0.000003468   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.9370748321 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -51.59629 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.3275    -0.6315    -0.5381    -0.4522     0.1392
+                     A          A          A          A          A   
+    1  O  1  S    0.884517  -0.000000  -0.333965   0.000000   0.325725
+    2  O  1  X    0.000000   0.770868  -0.000002   0.000000   0.000005
+    3  O  1  Y    0.104642   0.000003   0.822464  -0.000000   0.559109
+    4  O  1  Z    0.000000  -0.000000   0.000000   1.000000  -0.000000
+    5  H  2  S    0.321465   0.450423   0.325592  -0.000000  -0.539126
+    6  H  3  S    0.321465  -0.450424   0.325593  -0.000000  -0.539113
+
+                      6
+                    0.1818
+                     A   
+    1  O  1  S   -0.000003
+    2  O  1  X    0.636995
+    3  O  1  Y   -0.000005
+    4  O  1  Z    0.000000
+    5  H  2  S   -0.545081
+    6  H  3  S    0.545092
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    86.67%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3511          6.3511
+           2         H              0.1755          0.8245
+           3         H              0.1755          0.8245
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000012    1.778688   -0.000000    1.778688
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    90.00%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.000 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.937075
+ O      0.00000  -0.06784   0.00000
+ H      0.78303   0.53834   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.1494287692       -0.2438792821        0.0000000000
+ H           1.0     1.6291471557        0.9016343693        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.0902500 *
+   2 H       0.9902500 *  0.0000000    1.6462794 *
+   3 H       1.0902500 *  1.6462794 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    90.00%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    90.00%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         5.1687326408
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.9223176319   -11.9223176319   0.027934453   0.000000000
+   2  1  0      -11.9235080818    -0.0011904499   0.008180017   0.000000000
+   3  2  0      -11.9236079214    -0.0000998396   0.002996954   0.000000000
+   4  3  0      -11.9236209709    -0.0000130495   0.001449045   0.000000000
+   5  0  0      -11.9236234072    -0.0000024363   0.001369269   0.000000000
+   6  1  0      -11.9236241046    -0.0000006974   0.000018009   0.000000000
+   7  2  0      -11.9236241051    -0.0000000005   0.000007510   0.000000000
+   8  3  0      -11.9236241051    -0.0000000001   0.000003145   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.9236241051 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -43.15558 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2978    -0.6182    -0.5348    -0.4506     0.1184
+                     A          A          A          A          A   
+    1  O  1  S    0.894148  -0.048515  -0.321246  -0.000000  -0.287574
+    2  O  1  X    0.015650   0.770903  -0.039114  -0.000000   0.195087
+    3  O  1  Y    0.098867   0.046847   0.813957  -0.000000  -0.545731
+    4  O  1  Z    0.000000   0.000000  -0.000000   1.000000  -0.000000
+    5  H  2  S    0.331631   0.456284   0.306798  -0.000000   0.348690
+    6  H  3  S    0.283727  -0.439278   0.372317   0.000000   0.678112
+
+                      6
+                    0.1740
+                     A   
+    1  O  1  S   -0.110672
+    2  O  1  X   -0.604876
+    3  O  1  Y   -0.166380
+    4  O  1  Z    0.000000
+    5  H  2  S    0.682727
+    6  H  3  S   -0.357879
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    90.91%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3512          6.3512
+           2         H              0.1754          0.8246
+           3         H              0.1758          0.8242
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.023338    1.802734   -0.000000    1.802886
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    88.24%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.100 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.923624
+ O      0.07907  -0.12906   0.00000
+ H      0.86211   0.47712   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.2988575383       -0.3595585198        0.0000000000
+ H           1.0     1.7785759249        0.7859551316        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.1902500 *
+   2 H       0.9902500 *  0.0000000    1.7285564 *
+   3 H       1.1902500 *  1.7285564 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    88.24%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.3 SECONDS, CPU UTILIZATION IS    91.18%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         5.0126482010
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.9014336511   -11.9014336511   0.025449375   0.000000000
+   2  1  0      -11.9023825182    -0.0009488671   0.007420183   0.000000000
+   3  2  0      -11.9024623841    -0.0000798659   0.002708130   0.000000000
+   4  3  0      -11.9024730814    -0.0000106973   0.001334259   0.000000000
+   5  0  0      -11.9024751834    -0.0000021019   0.001316415   0.000000000
+   6  1  0      -11.9024758333    -0.0000006499   0.000016404   0.000000000
+   7  2  0      -11.9024758337    -0.0000000004   0.000006916   0.000000000
+   8  3  0      -11.9024758338    -0.0000000001   0.000002920   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.9024758338 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -29.88445 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2744    -0.6048    -0.5288    -0.4489     0.0929
+                     A          A          A          A          A   
+    1  O  1  S    0.901935  -0.104164  -0.299659   0.000000  -0.243747
+    2  O  1  X    0.029931   0.765767  -0.105324   0.000000   0.289247
+    3  O  1  Y    0.093011   0.119780   0.800108  -0.000000  -0.523564
+    4  O  1  Z   -0.000000  -0.000000   0.000000   1.000000   0.000000
+    5  H  2  S    0.339840   0.472616   0.271675  -0.000000   0.234733
+    6  H  3  S    0.247941  -0.406247   0.430268  -0.000000   0.726433
+
+                      6
+                    0.1717
+                     A   
+    1  O  1  S   -0.162647
+    2  O  1  X   -0.563868
+    3  O  1  Y   -0.250417
+    4  O  1  Z    0.000000
+    5  H  2  S    0.729545
+    6  H  3  S   -0.246279
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    91.89%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3514          6.3514
+           2         H              0.1747          0.8253
+           3         H              0.1767          0.8233
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.053821    1.826314    0.000000    1.827106
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    91.89%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.200 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.902476
+ O      0.15815  -0.19027   0.00000
+ H      0.94118   0.41591   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.4482863075       -0.4752377575        0.0000000000
+ H           1.0     1.9280046940        0.6702758939        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.2902500 *
+   2 H       0.9902500 *  0.0000000    1.8126165 *
+   3 H       1.2902500 *  1.8126165 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    89.47%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.3 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    89.47%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.8702735779
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.8789083773   -11.8789083773   0.023047079   0.000000000
+   2  1  0      -11.8796611109    -0.0007527336   0.006703743   0.000000000
+   3  2  0      -11.8797251966    -0.0000640857   0.002436262   0.000000000
+   4  3  0      -11.8797341358    -0.0000089393   0.001230396   0.000000000
+   5  0  0      -11.8797360076    -0.0000018717   0.001280075   0.000000000
+   6  1  0      -11.8797366371    -0.0000006295   0.000014816   0.000000000
+   7  2  0      -11.8797366374    -0.0000000003   0.000006276   0.000000000
+   8  3  0      -11.8797366375    -0.0000000001   0.000002656   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.8797366375 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -15.61497 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2560    -0.5929    -0.5196    -0.4470     0.0669
+                     A          A          A          A          A   
+    1  O  1  S    0.907982  -0.160094  -0.267221   0.000000  -0.208154
+    2  O  1  X    0.042207   0.750404  -0.190221  -0.000000   0.334234
+    3  O  1  Y    0.087595   0.209604   0.775700  -0.000000  -0.510526
+    4  O  1  Z   -0.000000   0.000000   0.000000   1.000000   0.000000
+    5  H  2  S    0.346212   0.493717   0.222748  -0.000000   0.171614
+    6  H  3  S    0.215061  -0.351532   0.491000   0.000000   0.744897
+
+                      6
+                    0.1715
+                     A   
+    1  O  1  S   -0.187625
+    2  O  1  X   -0.535926
+    3  O  1  Y   -0.293334
+    4  O  1  Z    0.000000
+    5  H  2  S    0.746534
+    6  H  3  S   -0.184993
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    90.24%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3517          6.3517
+           2         H              0.1735          0.8265
+           3         H              0.1782          0.8218
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.091840    1.851270   -0.000000    1.853547
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    90.24%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.300 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.879737
+ O      0.23722  -0.25149   0.00000
+ H      1.02026   0.35469   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.5977150766       -0.5909169952        0.0000000000
+ H           1.0     2.0774334632        0.5545966562        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.3902500 *
+   2 H       0.9902500 *  0.0000000    1.8982228 *
+   3 H       1.3902500 *  1.8982228 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    92.68%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    92.68%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.7387495755
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.8577420887   -11.8577420887   0.020754413   0.000000000
+   2  1  0      -11.8583364306    -0.0005943419   0.006029927   0.000000000
+   3  2  0      -11.8583879309    -0.0000515003   0.002179146   0.000000000
+   4  3  0      -11.8583954987    -0.0000075678   0.001133116   0.000000000
+   5  0  0      -11.8583971956    -0.0000016969   0.001249754   0.000000000
+   6  1  0      -11.8583978158    -0.0000006202   0.000012929   0.000000000
+   7  2  0      -11.8583978160    -0.0000000002   0.000005474   0.000000000
+   8  3  0      -11.8583978161    -0.0000000000   0.000002310   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.8583978161 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        -2.22426 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2416    -0.5835    -0.5072    -0.4449     0.0419
+                     A          A          A          A          A   
+    1  O  1  S    0.912547  -0.207108  -0.227399  -0.000000  -0.179080
+    2  O  1  X    0.052287   0.725213  -0.274427  -0.000000   0.358237
+    3  O  1  Y    0.082897   0.296209   0.741767   0.000000  -0.503652
+    4  O  1  Z    0.000000   0.000000  -0.000000   1.000000  -0.000000
+    5  H  2  S    0.351015   0.511581   0.170330   0.000000   0.132553
+    6  H  3  S    0.185583  -0.285864   0.541986   0.000000   0.753897
+
+                      6
+                    0.1721
+                     A   
+    1  O  1  S   -0.201457
+    2  O  1  X   -0.517387
+    3  O  1  Y   -0.318598
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.753983
+    6  H  3  S   -0.147414
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.4 SECONDS, CPU UTILIZATION IS    93.18%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3523          6.3523
+           2         H              0.1721          0.8279
+           3         H              0.1802          0.8198
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.137563    1.878951   -0.000000    1.883980
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    93.33%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.400 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.858398
+ O      0.31630  -0.31270   0.00000
+ H      1.09933   0.29348   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.7471438458       -0.7065962329        0.0000000000
+ H           1.0     2.2268622323        0.4389174185        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.4902500 *
+   2 H       0.9902500 *  0.0000000    1.9851753 *
+   3 H       1.4902500 *  1.9851753 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    93.33%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.4 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    93.33%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.6177661506
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.8379625593   -11.8379625593   0.018590978   0.000000000
+   2  1  0      -11.8384295970    -0.0004670377   0.005398929   0.000000000
+   3  2  0      -11.8384709759    -0.0000413788   0.001936345   0.000000000
+   4  3  0      -11.8384774242    -0.0000064483   0.001039228   0.000000000
+   5  0  0      -11.8384789712    -0.0000015470   0.001216617   0.000000000
+   6  1  0      -11.8384795825    -0.0000006112   0.000010753   0.000000000
+   7  2  0      -11.8384795826    -0.0000000001   0.000004538   0.000000000
+   8  3  0      -11.8384795826    -0.0000000000   0.000001906   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.8384795826 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        10.27499 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2304    -0.5765    -0.4925    -0.4428     0.0186
+                     A          A          A          A          A   
+    1  O  1  S    0.915931  -0.240571  -0.187647  -0.000000  -0.154616
+    2  O  1  X    0.060285   0.697517  -0.341772  -0.000000   0.371922
+    3  O  1  Y    0.079006   0.363572   0.706522   0.000000  -0.500115
+    4  O  1  Z    0.000000  -0.000000  -0.000000   1.000000  -0.000000
+    5  H  2  S    0.354564   0.522706   0.125624   0.000000   0.105809
+    6  H  3  S    0.159621  -0.224033   0.577084   0.000000   0.759248
+
+                      6
+                    0.1732
+                     A   
+    1  O  1  S   -0.209950
+    2  O  1  X   -0.504680
+    3  O  1  Y   -0.335090
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.757685
+    6  H  3  S   -0.121849
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    93.75%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3532          6.3532
+           2         H              0.1706          0.8294
+           3         H              0.1826          0.8174
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.190791    1.910185   -0.000000    1.919690
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    93.75%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.500 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.838480
+ O      0.39537  -0.37391   0.00000
+ H      1.17840   0.23227   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     0.8965726149       -0.8222754706        0.0000000000
+ H           1.0     2.3762910015        0.3232381808        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.5902500 *
+   2 H       0.9902500 *  0.0000000    2.0733047 *
+   3 H       1.5902500 *  2.0733047 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    91.84%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    91.84%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.5083235994
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.8180165773   -11.8180165773   0.016569860   0.000000000
+   2  1  0      -11.8183817609    -0.0003651836   0.004810800   0.000000000
+   3  2  0      -11.8184149391    -0.0000331782   0.001707570   0.000000000
+   4  3  0      -11.8184204345    -0.0000054953   0.000946379   0.000000000
+   5  0  0      -11.8184218386    -0.0000014041   0.001173959   0.000000000
+   6  1  0      -11.8184224339    -0.0000005953   0.000008472   0.000000000
+   7  2  0      -11.8184224340    -0.0000000001   0.000003562   0.000000000
+   8  3  0      -11.8184224340    -0.0000000000   0.000001488   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.8184224340 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        22.86141 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2215    -0.5714    -0.4767    -0.4406    -0.0028
+                     A          A          A          A          A   
+    1  O  1  S    0.918414  -0.262227  -0.153124  -0.000000  -0.133631
+    2  O  1  X    0.066470   0.673882  -0.389093   0.000000   0.379863
+    3  O  1  Y    0.075891   0.409335   0.676902  -0.000000  -0.498385
+    4  O  1  Z   -0.000000  -0.000000   0.000000   1.000000  -0.000000
+    5  H  2  S    0.357155   0.528569   0.092643   0.000000   0.086114
+    6  H  3  S    0.137035  -0.173722   0.598649  -0.000000   0.762918
+
+                      6
+                    0.1746
+                     A   
+    1  O  1  S   -0.215519
+    2  O  1  X   -0.495757
+    3  O  1  Y   -0.346557
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.759643
+    6  H  3  S   -0.103045
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    92.31%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3543          6.3543
+           2         H              0.1689          0.8311
+           3         H              0.1853          0.8147
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.250923    1.945312    0.000000    1.961429
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    92.31%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.600 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.818422
+ O      0.47445  -0.43513   0.00000
+ H      1.25748   0.17105   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.0460013841       -0.9379547083        0.0000000000
+ H           1.0     2.5257197706        0.2075589430        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.6902500 *
+   2 H       0.9902500 *  0.0000000    2.1624670 *
+   3 H       1.6902500 *  2.1624670 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.02 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    96.15%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.5 SECONDS, CPU UTILIZATION IS    96.15%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.4109791696
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.7966355331   -11.7966355331   0.014698435   0.000000000
+   2  1  0      -11.7969195915    -0.0002840584   0.004265071   0.000000000
+   3  2  0      -11.7969460873    -0.0000264958   0.001492055   0.000000000
+   4  3  0      -11.7969507451    -0.0000046578   0.000853149   0.000000000
+   5  0  0      -11.7969520042    -0.0000012591   0.001117780   0.000000000
+   6  1  0      -11.7969525725    -0.0000005683   0.000006298   0.000000000
+   7  2  0      -11.7969525725    -0.0000000000   0.000002640   0.000000000
+   8  3  0      -11.7969525725    -0.0000000000   0.000001096   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7969525725 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        36.33434 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2143    -0.5674    -0.4609    -0.4384    -0.0222
+                     A          A          A          A          A   
+    1  O  1  S    0.920225  -0.275883  -0.125070  -0.000000  -0.115446
+    2  O  1  X    0.071163   0.656316  -0.420624  -0.000000   0.384347
+    3  O  1  Y    0.073461   0.438518   0.654790   0.000000  -0.497654
+    4  O  1  Z   -0.000000  -0.000000  -0.000000   1.000000   0.000000
+    5  H  2  S    0.359039   0.531558   0.069789   0.000000   0.070861
+    6  H  3  S    0.117544  -0.135225   0.611403   0.000000   0.765682
+
+                      6
+                    0.1761
+                     A   
+    1  O  1  S   -0.219328
+    2  O  1  X   -0.489426
+    3  O  1  Y   -0.354819
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.760688
+    6  H  3  S   -0.088406
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.02 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    92.86%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3555          6.3555
+           2         H              0.1673          0.8327
+           3         H              0.1882          0.8118
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.317015    1.984259    0.000000    2.009423
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    92.86%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.700 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.796953
+ O      0.55352  -0.49634   0.00000
+ H      1.33655   0.10984   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.1954301532       -1.0536339460        0.0000000000
+ H           1.0     2.6751485398        0.0918797053        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.7902500 *
+   2 H       0.9902500 *  0.0000000    2.2525396 *
+   3 H       1.7902500 *  2.2525396 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    92.86%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.5 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    92.86%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.3248179109
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.7739442694   -11.7739442694   0.012979337   0.000000000
+   2  1  0      -11.7741640159    -0.0002197465   0.003760766   0.000000000
+   3  2  0      -11.7741850503    -0.0000210344   0.001290706   0.000000000
+   4  3  0      -11.7741889586    -0.0000039083   0.000759247   0.000000000
+   5  0  0      -11.7741900679    -0.0000011093   0.001046864   0.000000000
+   6  1  0      -11.7741905966    -0.0000005288   0.000004383   0.000000000
+   7  2  0      -11.7741905967    -0.0000000000   0.000001864   0.000000000
+   8  3  0      -11.7741905967    -0.0000000000   0.000000919   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7741905967 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        50.61812 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2085    -0.5641    -0.4457    -0.4362    -0.0398
+                     A          A          A          A          A   
+    1  O  1  S    0.921541  -0.284593  -0.102775   0.000000  -0.099613
+    2  O  1  X    0.074676   0.644149  -0.441373  -0.000000   0.386669
+    3  O  1  Y    0.071604   0.456648   0.639237  -0.000000  -0.497483
+    4  O  1  Z    0.000000   0.000000   0.000000   1.000000  -0.000000
+    5  H  2  S    0.360412   0.533183   0.054119  -0.000000   0.058638
+    6  H  3  S    0.100811  -0.106152   0.618930   0.000000   0.767878
+
+                      6
+                    0.1778
+                     A   
+    1  O  1  S   -0.222001
+    2  O  1  X   -0.484946
+    3  O  1  Y   -0.360878
+    4  O  1  Z    0.000000
+    5  H  2  S    0.761218
+    6  H  3  S   -0.076532
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.04 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    94.92%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3568          6.3568
+           2         H              0.1658          0.8342
+           3         H              0.1910          0.8090
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.387870    2.026634   -0.000000    2.063417
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    94.92%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.800 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.774191
+ O      0.63259  -0.55756   0.00000
+ H      1.41563   0.04862   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.3448589224       -1.1693131837        0.0000000000
+ H           1.0     2.8245773090       -0.0237995324        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.8902500 *
+   2 H       0.9902500 *  0.0000000    2.3434176 *
+   3 H       1.8902500 *  2.3434176 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    95.00%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    95.00%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.2477155128
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.7512530853   -11.7512530853   0.011411475   0.000000000
+   2  1  0      -11.7514221100    -0.0001690247   0.003296589   0.000000000
+   3  2  0      -11.7514386829    -0.0000165729   0.001196445   0.000000000
+   4  3  0      -11.7514419179    -0.0000032350   0.000711961   0.000000000
+   5  0  0      -11.7514428745    -0.0000009566   0.001007018   0.000000000
+   6  1  0      -11.7514433523    -0.0000004778   0.000006462   0.000000000
+   7  2  0      -11.7514433523    -0.0000000001   0.000003525   0.000000000
+   8  3  0      -11.7514433523    -0.0000000000   0.000001821   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7514433523 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        64.89265 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.2037    -0.5613    -0.4340    -0.4315    -0.0556
+                     A          A          A          A          A   
+    1  O  1  S    0.922493  -0.290285  -0.000000  -0.085097  -0.085811
+    2  O  1  X    0.077280   0.636046   0.000000  -0.455043   0.387632
+    3  O  1  Y    0.070207   0.467731   0.000000   0.628642  -0.497625
+    4  O  1  Z   -0.000000  -0.000000   1.000000  -0.000000   0.000000
+    5  H  2  S    0.361420   0.534178   0.000000   0.043204   0.048622
+    6  H  3  S    0.086489  -0.084035  -0.000000   0.623407   0.769664
+
+                      6
+                    0.1794
+                     A   
+    1  O  1  S   -0.223909
+    2  O  1  X   -0.481821
+    3  O  1  Y   -0.365345
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.761445
+    6  H  3  S   -0.066617
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    95.24%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3580          6.3580
+           2         H              0.1643          0.8357
+           3         H              0.1936          0.8064
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.462165    2.071837   -0.000000    2.122759
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    95.24%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 0.900 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.751443
+ O      0.71167  -0.61877   0.00000
+ H      1.49470  -0.01259   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.4942876916       -1.2849924214        0.0000000000
+ H           1.0     2.9740060781       -0.1394787701        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  1.9902500 *
+   2 H       0.9902500 *  0.0000000    2.4350107 *
+   3 H       1.9902500 *  2.4350107 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    95.24%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.6 SECONDS, CPU UTILIZATION IS    93.75%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.1773717203
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.7300607241   -11.7300607241   0.009990984   0.000000000
+   2  1  0      -11.7301899772    -0.0001292531   0.002871140   0.000000000
+   3  2  0      -11.7302029202    -0.0000129430   0.001140111   0.000000000
+   4  3  0      -11.7302055550    -0.0000026349   0.000688392   0.000000000
+   5  0  0      -11.7302063606    -0.0000008055   0.000994717   0.000000000
+   6  1  0      -11.7302067789    -0.0000004183   0.000009671   0.000000000
+   7  2  0      -11.7302067790    -0.0000000001   0.000005369   0.000000000
+   8  3  0      -11.7302067790    -0.0000000000   0.000002857   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7302067790 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        78.21919 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1997    -0.5588    -0.4319    -0.4184    -0.0697
+                     A          A          A          A          A   
+    1  O  1  S    0.923181  -0.294104   0.000000  -0.071002  -0.073789
+    2  O  1  X    0.079199   0.630798   0.000000  -0.464057   0.387767
+    3  O  1  Y    0.069172   0.474366  -0.000000   0.621582  -0.497940
+    4  O  1  Z    0.000000   0.000000   1.000000   0.000000  -0.000000
+    5  H  2  S    0.362169   0.534871  -0.000000   0.035385   0.040300
+    6  H  3  S    0.074253  -0.066986  -0.000000   0.626093   0.771118
+
+                      6
+                    0.1811
+                     A   
+    1  O  1  S   -0.225287
+    2  O  1  X   -0.479697
+    3  O  1  Y   -0.368623
+    4  O  1  Z    0.000000
+    5  H  2  S    0.761492
+    6  H  3  S   -0.058167
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.04 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.52%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3590          6.3590
+           2         H              0.1630          0.8370
+           3         H              0.1960          0.8040
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.538570    2.119157   -0.000000    2.186523
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.52%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.000 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.730207
+ O      0.79074  -0.67999   0.00000
+ H      1.57378  -0.07381   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.6437164607       -1.4006716591        0.0000000000
+ H           1.0     3.1234348473       -0.2551580078        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  2.0902500 *
+   2 H       0.9902500 *  0.0000000    2.5272413 *
+   3 H       2.0902500 *  2.5272413 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.52%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.6 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.52%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.1121586925
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.7112290340   -11.7112290340   0.008712011   0.000000000
+   2  1  0      -11.7113273059    -0.0000982719   0.002483064   0.000000000
+   3  2  0      -11.7113373168    -0.0000100109   0.001077101   0.000000000
+   4  3  0      -11.7113394254    -0.0000021086   0.000651911   0.000000000
+   5  0  0      -11.7113400871    -0.0000006616   0.000958751   0.000000000
+   6  1  0      -11.7113404416    -0.0000003546   0.000013038   0.000000000
+   7  2  0      -11.7113404418    -0.0000000002   0.000007051   0.000000000
+   8  3  0      -11.7113404418    -0.0000000000   0.000003878   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.7113404418 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS        90.05834 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1963    -0.5566    -0.4299    -0.4064    -0.0823
+                     A          A          A          A          A   
+    1  O  1  S    0.923673  -0.296731   0.000000  -0.059672  -0.063342
+    2  O  1  X    0.080609   0.627492  -0.000000  -0.469962   0.387437
+    3  O  1  Y    0.068415   0.478196   0.000000   0.616977  -0.498345
+    4  O  1  Z   -0.000000   0.000000   1.000000  -0.000000   0.000000
+    5  H  2  S    0.362737   0.535400  -0.000000   0.029595   0.033335
+    6  H  3  S    0.063809  -0.053671   0.000000   0.627725   0.772283
+
+                      6
+                    0.1827
+                     A   
+    1  O  1  S   -0.226288
+    2  O  1  X   -0.478315
+    3  O  1  Y   -0.370998
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.761434
+    6  H  3  S   -0.050867
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.71%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3598          6.3598
+           2         H              0.1618          0.8382
+           3         H              0.1980          0.8020
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.615842    2.167865    0.000000    2.253641
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    94.37%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.100 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.711340
+ O      0.86982  -0.74120   0.00000
+ H      1.65285  -0.13502   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.7931452299       -1.5163508968        0.0000000000
+ H           1.0     3.2728636164       -0.3708372455        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  2.1902500 *
+   2 H       0.9902500 *  0.0000000    2.6200419 *
+   3 H       2.1902500 *  2.6200419 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    94.37%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    94.37%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         4.0512855888
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.6948318596   -11.6948318596   0.007567312   0.000000000
+   2  1  0      -11.6949061717    -0.0000743121   0.002131094   0.000000000
+   3  2  0      -11.6949138377    -0.0000076660   0.000998017   0.000000000
+   4  3  0      -11.6949154949    -0.0000016572   0.000605516   0.000000000
+   5  0  0      -11.6949160249    -0.0000005299   0.000903638   0.000000000
+   6  1  0      -11.6949163158    -0.0000002909   0.000015838   0.000000000
+   7  2  0      -11.6949163160    -0.0000000002   0.000008227   0.000000000
+   8  3  0      -11.6949163161    -0.0000000001   0.000004705   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.6949163161 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       100.36494 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1935    -0.5546    -0.4280    -0.3956    -0.0936
+                     A          A          A          A          A   
+    1  O  1  S    0.924022  -0.298577  -0.000000  -0.050487  -0.054289
+    2  O  1  X    0.081645   0.625477   0.000000  -0.473754   0.386888
+    3  O  1  Y    0.067870   0.480266  -0.000000   0.614048  -0.498791
+    4  O  1  Z    0.000000  -0.000000   1.000000   0.000000   0.000000
+    5  H  2  S    0.363176   0.535827  -0.000000   0.025160   0.027486
+    6  H  3  S    0.054899  -0.043164  -0.000000   0.628745   0.773190
+
+                      6
+                    0.1842
+                     A   
+    1  O  1  S   -0.227020
+    2  O  1  X   -0.477480
+    3  O  1  Y   -0.372680
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.761317
+    6  H  3  S   -0.044502
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    94.59%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3603          6.3603
+           2         H              0.1607          0.8393
+           3         H              0.1996          0.8004
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.692907    2.217279   -0.000000    2.323026
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.7 SECONDS, CPU UTILIZATION IS    95.95%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.200 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.694916
+ O      0.94889  -0.80242   0.00000
+ H      1.73192  -0.19624   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     1.9425739990       -1.6320301345        0.0000000000
+ H           1.0     3.4222923856       -0.4865164832        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  2.2902500 *
+   2 H       0.9902500 *  0.0000000    2.7133542 *
+   3 H       2.2902500 *  2.7133542 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.00%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.00%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         3.9944637680
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.6804966497   -11.6804966497   0.006548695   0.000000000
+   2  1  0      -11.6805525721    -0.0000559223   0.001814016   0.000000000
+   3  2  0      -11.6805583857    -0.0000058136   0.000906716   0.000000000
+   4  3  0      -11.6805596651    -0.0000012794   0.000552815   0.000000000
+   5  0  0      -11.6805600793    -0.0000004142   0.000838149   0.000000000
+   6  1  0      -11.6805603105    -0.0000002312   0.000016017   0.000000000
+   7  2  0      -11.6805603107    -0.0000000003   0.000009309   0.000000000
+   8  3  0      -11.6805603108    -0.0000000001   0.000004608   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.6805603108 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       109.37374 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1910    -0.5528    -0.4263    -0.3859    -0.1037
+                     A          A          A          A          A   
+    1  O  1  S    0.924267  -0.299903   0.000000  -0.042978  -0.046471
+    2  O  1  X    0.082408   0.624305  -0.000000  -0.476094   0.386287
+    3  O  1  Y    0.067483   0.481249  -0.000000   0.612247  -0.499249
+    4  O  1  Z   -0.000000   0.000000   1.000000   0.000000   0.000000
+    5  H  2  S    0.363522   0.536180  -0.000000   0.021648   0.022576
+    6  H  3  S    0.047299  -0.034812  -0.000000   0.629423   0.773863
+
+                      6
+                    0.1856
+                     A   
+    1  O  1  S   -0.227557
+    2  O  1  X   -0.477042
+    3  O  1  Y   -0.373831
+    4  O  1  Z    0.000000
+    5  H  2  S    0.761173
+    6  H  3  S   -0.038921
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.02 TOTAL CPU TIME =          0.7 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    94.87%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3605          6.3605
+           2         H              0.1598          0.8402
+           3         H              0.2008          0.7992
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.768898    2.266812    0.000000    2.393667
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.15%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.300 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.680560
+ O      1.02797  -0.86363   0.00000
+ H      1.81100  -0.25745   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     2.0920027682       -1.7477093722        0.0000000000
+ H           1.0     3.5717211547       -0.6021957209        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  2.3902500 *
+   2 H       0.9902500 *  0.0000000    2.8071270 *
+   3 H       2.3902500 *  2.8071270 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.15%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    97.44%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         3.9415167199
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.6677967884   -11.6677967884   0.005647286   0.000000000
+   2  1  0      -11.6678387002    -0.0000419117   0.001530528   0.000000000
+   3  2  0      -11.6678430711    -0.0000043709   0.000805996   0.000000000
+   4  3  0      -11.6678440424    -0.0000009713   0.000497961   0.000000000
+   5  0  0      -11.6678443587    -0.0000003162   0.001793371   0.000000000
+   6  1  0      -11.6678439542     0.0000004044   0.000771713   0.000000000
+   7  2  0      -11.6678443802    -0.0000004259   0.000312616   0.000000000
+   8  3  0      -11.6678444821    -0.0000001019   0.000188038   0.000000000
+   9  0  0      -11.6678445167    -0.0000000346   0.000232958   0.000000000
+  10  1  0      -11.6678445371    -0.0000000204   0.000010262   0.000000000
+  11  2  0      -11.6678445372    -0.0000000001   0.000003673   0.000000000
+  12  3  0      -11.6678445372    -0.0000000000   0.000002409   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.6678445372 AFTER  12 ITERATIONS
+
+ HEAT OF FORMATION IS       117.35324 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1889    -0.5513    -0.4248    -0.3771    -0.1126
+                     A          A          A          A          A   
+    1  O  1  S    0.924435  -0.300873   0.000000  -0.036793  -0.039743
+    2  O  1  X    0.082973   0.623671  -0.000000  -0.477426   0.385740
+    3  O  1  Y    0.067213   0.481576   0.000000   0.611190  -0.499704
+    4  O  1  Z    0.000000   0.000000   1.000000  -0.000000   0.000000
+    5  H  2  S    0.363803   0.536472  -0.000000   0.018790   0.018462
+    6  H  3  S    0.040815  -0.028143   0.000000   0.629925   0.774326
+
+                      6
+                    0.1869
+                     A   
+    1  O  1  S   -0.227953
+    2  O  1  X   -0.476885
+    3  O  1  Y   -0.374580
+    4  O  1  Z   -0.000000
+    5  H  2  S    0.761020
+    6  H  3  S   -0.034010
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    95.18%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3605          6.3605
+           2         H              0.1590          0.8410
+           3         H              0.2015          0.7985
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.843165    2.315988   -0.000000    2.464696
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.39%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.400 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.667845
+ O      1.10704  -0.92485   0.00000
+ H      1.89007  -0.31867   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ O           8.0     2.2414315373       -1.8633886099        0.0000000000
+ H           1.0     3.7211499239       -0.7178749586        0.0000000000
+ H           1.0    -1.4797183866        1.0173136070        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 O          2 H          3 H     
+
+   1 O       0.0000000    0.9902500 *  2.4902500 *
+   2 H       0.9902500 *  0.0000000    2.9013158 *
+   3 H       2.4902500 *  2.9013158 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE        63 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    95.24%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.8 SECONDS, CPU UTILIZATION IS    96.43%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         3.8921918709
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       405 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0      -11.6564390534   -11.6564390534   0.004852496   0.000000000
+   2  1  0      -11.6564703670    -0.0000313136   0.001278457   0.000000000
+   3  2  0      -11.6564736332    -0.0000032662   0.000697666   0.000000000
+   4  3  0      -11.6564743606    -0.0000007274   0.000445656   0.000000000
+   5  0  0      -11.6564745970    -0.0000002364   0.000610324   0.000000000
+   6  1  0      -11.6564747279    -0.0000001308   0.000047149   0.000000000
+   7  2  0      -11.6564747299    -0.0000000020   0.000024369   0.000000000
+   8  3  0      -11.6564747304    -0.0000000005   0.000015107   0.000000000
+   9  4  0      -11.6564747306    -0.0000000002   0.000008220   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS      -11.6564747306 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       124.48811 KCAL/MOL
+
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.1871    -0.5499    -0.4234    -0.3693    -0.1206
+                     A          A          A          A          A   
+    1  O  1  S    0.924546  -0.301598   0.000000  -0.031653  -0.033983
+    2  O  1  X    0.083396   0.623347  -0.000000  -0.478067   0.385322
+    3  O  1  Y    0.067029   0.481556   0.000000   0.610606  -0.500135
+    4  O  1  Z   -0.000000  -0.000000   1.000000  -0.000000   0.000000
+    5  H  2  S    0.364036   0.536713   0.000000   0.016384   0.015046
+    6  H  3  S    0.035283  -0.022812   0.000000   0.630351   0.774604
+
+                      6
+                    0.1881
+                     A   
+    1  O  1  S   -0.228247
+    2  O  1  X   -0.476931
+    3  O  1  Y   -0.375015
+    4  O  1  Z    0.000000
+    5  H  2  S    0.760870
+    6  H  3  S   -0.029681
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS    96.55%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         O             -0.3601          6.3601
+           2         H              0.1583          0.8417
+           3         H              0.2018          0.7982
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000       -0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+    -0.915278    2.364472   -0.000000    2.535441
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS    96.55%
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1= 1.500 COORD 2= 0.000
+ HAS ENERGY VALUE     -11.656475
+ O      1.18611  -0.98606   0.00000
+ H      1.96915  -0.37988   0.00000
+ H     -0.78303   0.53834   0.00000
+ ----------------------------------
+ ... DONE WITH POTENTIAL SURFACE SCAN ...
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.8 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.9 SECONDS, CPU UTILIZATION IS    96.55%
+               580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY Thu Sep 10 20:52:05 2020
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.298 + 0.552 = 0.851
+ ----------------------------------------
+ ddikick.x: exited gracefully.
+----- accounting info -----
+Files used on the master node chemcompute-node-0.novalocal were:
+-rw-r--r--. 1 chemcomp chemcomp      405 Sep 10 20:52 /scratch/167764/188687.F05
+-rw-rw-r--. 1 chemcomp chemcomp        0 Sep 10 20:52 /scratch/167764/188687.F08
+-rw-rw-r--. 1 chemcomp chemcomp 52428800 Sep 10 20:52 /scratch/167764/188687.F10
+Thu Sep 10 20:52:08 UTC 2020
+0.121u 0.068s 0:04.49 4.0%	0+0k 8+216io 0pf+0w
+Finishing Up...
+Looking for IR data...
+Looking for thermodynamics data...
+Looking for UV-Vis data...
+167764
